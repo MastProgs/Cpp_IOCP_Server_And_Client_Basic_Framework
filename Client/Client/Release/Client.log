@@ -1,0 +1,16 @@
+﻿  ClientClass.cpp
+ClientClass.cpp(42): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\WinSock2.h(1850): note: 'inet_addr' 선언을 참조하십시오.
+ClientClass.cpp(63): warning C4996: 'WSAAsyncSelect': Use WSAEventSelect() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\WinSock2.h(2699): note: 'WSAAsyncSelect' 선언을 참조하십시오.
+  main.cpp
+  processPacket.cpp
+  ProcessWinMessage_clientClass.cpp
+  stdafx.cpp
+  코드를 생성하고 있습니다.
+  147 of 147 functions (100.0%) were compiled, the rest were copied from previous compilation.
+    145 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  Client.vcxproj -> D:\Program Files (x86)\VS projects\졸업작품\client\Client\Release\Client.exe
+  Client.vcxproj -> D:\Program Files (x86)\VS projects\졸업작품\client\Client\Release\Client.pdb (Full PDB)

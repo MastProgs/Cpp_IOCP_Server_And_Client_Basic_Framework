@@ -1,0 +1,15 @@
+﻿  main.cpp
+  코드를 생성하고 있습니다...
+cl : 명령줄 warning D9028: 최소 다시 빌드에 실패했습니다. 정상 빌드로 되돌립니다.
+  컴파일하고 있습니다...
+  ClientClass.cpp
+d:\program files (x86)\vs projects\졸업작품\client\client\client\clientclass.cpp(42): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1850): note: 'inet_addr' 선언을 참조하십시오.
+d:\program files (x86)\vs projects\졸업작품\client\client\client\clientclass.cpp(63): warning C4996: 'WSAAsyncSelect': Use WSAEventSelect() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(2699): note: 'WSAAsyncSelect' 선언을 참조하십시오.
+  ProcessWinMessage_clientClass.cpp
+  processPacket.cpp
+  stdafx.cpp
+  코드를 생성하고 있습니다...
+  Client.vcxproj -> D:\Program Files (x86)\VS projects\졸업작품\client\Client\Debug\Client.exe
+  Client.vcxproj -> D:\Program Files (x86)\VS projects\졸업작품\client\Client\Debug\Client.pdb (Full PDB)
