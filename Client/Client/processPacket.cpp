@@ -1,8 +1,8 @@
 #include"stdafx.h"
 
-void AsynchronousClientClass::processPacket()
+void AsynchronousClientClass::processPacket(const Packet buf[])
 {
-	switch (m_recvbuf[1])
+	switch (buf[1])
 	{
 	case TEST:
 #ifdef _DEBUG

@@ -149,7 +149,7 @@
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\server\Server\Server\protocol.h" />
+    <ClInclude Include="..\..\Server\Server\protocol.h" />
     <ClInclude Include="ClientClass.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

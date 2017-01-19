@@ -23,10 +23,38 @@ void AsynchronousClientClass::ProcessWinMessage(HWND hwnd, UINT uMsg, WPARAM wPa
 			error_display("FD_READ::", err_no, __LINE__);
 			return;
 		}
-		m_recvbytes = m_retval;
+		Packet *buf = m_recvbuf;
 
-		// recvbuf 에 받은 내용을 토대로 데이터 처리
-		processPacket();
+		int current_data_processing = ioByteSize;
+		while (0 < current_data_processing) {
+			if (0 == m_packet_size_current) {
+				m_packet_size_current = buf[0];
+				if (buf[0] > MAX_BUF_SIZE) {
+					cout << "AsynchronousClientClass::ProcessWinMessage() Error, recvbuf[0] is out of MAX_BUF_SIZE\n";
+					exit(-1);
+				}
+			}
+			int need_to_build = m_packet_size_current - m_packet_size_previous;
+			if (need_to_build <= current_data_processing) {
+				// Packet building Complete & Process Packet
+				memcpy(m_data_buf + m_packet_size_previous, buf, need_to_build);
+
+				// recvbuf 에 받은 내용을 토대로 데이터 처리
+				processPacket(m_data_buf);
+
+				m_packet_size_current = 0;
+				m_packet_size_previous = 0;
+				current_data_processing -= need_to_build;
+				buf += need_to_build;
+			}
+			else {
+				// Packet build continue
+				memcpy(m_data_buf + m_packet_size_previous, buf, current_data_processing);
+				m_packet_size_previous += current_data_processing;
+				current_data_processing = 0;
+				buf += current_data_processing;
+			}
+		}
 	}
 		break;
 	case FD_WRITE:	// 데이터 송신
